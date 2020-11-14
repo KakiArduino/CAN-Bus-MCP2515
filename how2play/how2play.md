@@ -1,4 +1,4 @@
- How to play
+# How to play
 ####Um guia rápido de implementação e uso. :tent: [:joy:](https://gist.github.com/rxaviers/7360908)
 
 ver [EEPROM Library](https://www.arduino.cc/en/Reference/EEPROM)
@@ -34,16 +34,22 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 
 ## Software
 1. Instalação da da biblioteca MCP2515:
+
 1.1 Baixe a versão estável (ramo master), disponivel em https://github.com/KakiArduino/MCP2515.
-1.2 Descompacte e adicione a pasta  **MCP2515-master** na pasta de bibliotecas do Arduino.
-Em caso de duvidas sobre instalação de biblioteca por esse procedimento consulte: [arduino.cc/en/Guide/Libraries](https://www.arduino.cc/en/Guide/Libraries#importing-a-zip-library).
+
+1.2 Descompacte e adicione a pasta  **MCP2515-master** na pasta de bibliotecas do Arduino. Em caso de duvidas sobre instalação de biblioteca por esse procedimento consulte: [arduino.cc/en/Guide/Libraries](https://www.arduino.cc/en/Guide/Libraries#importing-a-zip-library).
 
 2. Programando os nodos CAN Mon e CAN Sensor.
 2.1 Abra o ambiente Arduino IDE e importe o exemplo CANMon, disponível em *Arquivo/Exemplos/MCP2515-master/CANMon*.
+
 2.2 Selecione a tipo de placa em *Ferramentas/Placas*. Algumas placas são comercializadas com mais de um tipo de processadores ou bootloader, po isso verifique se opção pré-selecionada é a correta em *Ferramentas/Processador*, caso não seja erros de gravação podem ocorrer.
+
 2.3 Conecte uma das placas Arduino e selecione a porta serial atribuida à ela em, *Ferramentas/Porta*, após isso carregue o código fonte na placa apertando o botão *Carregar* ou teclando *Ctrl + u*.
+
 Ob. 1: A comunicação serial do CAN Mon é por padrão 2000000, porém nem todas interfaces de monitoramento serial possuem essa velocidade, verifique! Caso necessario modifique a linha *Serial.begin(2000000);* na *void loop()*.
+
 2.4 Repita os procedimentos *2.1, 2.2 e 2.3* porém agora com o exemplo CANSensor, disponível em *Arquivo/Exemplos/MCP2515-master/CANSensor*, e gravando na outra placa Arduino Nano.
+
 Ob. 2: Ao substituir a placa Arduino Nano por outro módelo pode ser necessário alterar o pino digital ultilizado na interrupção, que é declarada na ultima linha da *void setup()*. Em [arduino.cc/reference/](https://www.arduino.cc/reference/pt/language/functions/external-interrupts/attachinterrupt/) pode-se verificar os pinos usaveis para interrupção para os variados tipos de placas Arduino.
 
 ### Conexões
