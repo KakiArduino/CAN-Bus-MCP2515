@@ -11,7 +11,7 @@ E. M. Kakuno ²<br>
 1 - IMEF, Universidade Federal do Rio Grande - RS.
 2 - Unipampa, campos Bagé - RS.<br><br>
 
-A Mini CAN é um produto de mestrado do [Programa de Pós-Graduação em Física, IMEF, FURG](https://ppgfisica.furg.br/), e foi parcialmente custeado pela [CAPES](https://www.gov.br/capes/pt-br) através de uma bolsa.
+A Mini CAN é um produto de mestrado do [Programa de Pós-Graduação em Física](https://ppgfisica.furg.br/), IMEF, FURG, e foi parcialmente custeado pela [CAPES](https://www.gov.br/capes/pt-br) através de uma bolsa.
 
 ### Introdução
 <div style="text-align: justify"> <font size="3pt" style="arial">
