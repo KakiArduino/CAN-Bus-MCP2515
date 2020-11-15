@@ -45,7 +45,7 @@ Programando os nodos CAN Mon e CAN Sensor:
 
 3. Conecte uma das placas Arduino e selecione a porta serial atribuida à ela em, *Ferramentas/Porta*, após isso carregue o código fonte na placa apertando o botão *Carregar* ou teclando *Ctrl + u*.
 
-> Ob. 1: A comunicação serial do CAN Mon é por padrão 2000000, porém nem todas interfaces de monitoramento serial possuem essa velocidade, verifique! Caso necessario modifique a linha `Serial.begin(2000000);` na *void loop()*.
+> Ob. 1: A comunicação serial do CAN Mon é por padrão 2000000, porém nem todas interfaces de monitoramento serial possuem essa velocidade, verifique! Caso necessario modifique a linha `Serial.begin(2000000);` na `void loop()`.
 
 4. Repita os procedimentos *2.1, 2.2 e 2.3* porém agora com o exemplo CANSensor, disponível em *Arquivo/Exemplos/MCP2515-master/CANSensor*, e gravando na outra placa Arduino Nano.
 
