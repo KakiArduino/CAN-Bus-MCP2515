@@ -33,14 +33,14 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 - [ ] XX Fios para conexões
 
 ## Software
-### Instalação da da biblioteca MCP2515:
+#### Instalação da da biblioteca MCP2515:
 1. Baixe a versão estável (ramo master), disponivel em https://github.com/KakiArduino/MCP2515.
 
 2. No ambiente Arduino IDE, inclua a bibblioteca selecionando o arquivo ***MCP2515-master.zip*** pelo caminho: ***Sketch/Incluir Biblioteca/Adicionar Biblioteca .ZIP***
 
 2. Adicione o arquivo  ***MCP2515-master.zip*** na pasta de bibliotecas do Arduino. Em caso de duvidas sobre instalação de biblioteca por esse procedimento consulte: [arduino.cc/en/Guide/Libraries](https://www.arduino.cc/en/Guide/Libraries#importing-a-zip-library).
 
-### Programando os nodos CAN Mon e CAN Sensor:
+#### Programando os nodos CAN Mon e CAN Sensor:
 1. No ambiente Arduino IDE e importe o exemplo CANMon, disponível em ***Arquivo/Exemplos/MCP2515-master/CANMon***.
 
 2. Selecione a tipo de placa em ***Ferramentas/Placas***. Algumas placas são comercializadas com mais de um tipo de processadores ou bootloader, po isso verifique se opção pré-selecionada é a correta em ***Ferramentas/Processador***, caso não seja erros de gravação podem ocorrer.
@@ -51,7 +51,9 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 
 4. Repita os procedimentos *2.1, 2.2 e 2.3* porém agora com o exemplo CANSensor, disponível em *Arquivo/Exemplos/MCP2515-master/CANSensor*, e gravando na outra placa Arduino Nano.
 
-> Ob. Ao substituir a placa Arduino Nano por outro módelo pode ser necessário alterar o pino digital ultilizado na interrupção, que é declarada na ultima linha da `void setup(){...}`*. Em [arduino.cc/reference/](https://www.arduino.cc/reference/pt/language/functions/external-interrupts/attachinterrupt/) pode-se verificar os pinos de entrada de interrupções para os variados tipos de placas Arduino.
+> Ob. Ao substituir a placa Arduino Nano por outro módelo pode ser necessário alterar o pino digital ultilizado na interrupção, que é declarada na ultima linha da `void setup(){...}`. Em [arduino.cc/reference/](https://www.arduino.cc/reference/pt/language/functions/external-interrupts/attachinterrupt/) pode-se verificar os pinos de entrada de interrupções para os variados tipos de placas Arduino.
 
 ## Conexões
-As conexões são apresentdas no diagrama abaixo.
+![Alt text](/mon_sensor_cx.jpg "Diagrama de conexões internas e entre os nodos CAN Mon e CAN Sensor")
+
+## Coletando as informações no computador.
