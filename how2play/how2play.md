@@ -25,12 +25,12 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 <div>
 
 #### Lista de materiais:
-- [ ] 1 Computador com linux, Arduino IDE, python, pySerial, demais bibliotecas.
-- [ ] 2 Arduino Nano.
-- [ ] 2 Módulo CAN (MCP2515 + TJA1050).
-- [ ] 1 par trançado para dados (CAN High).
-- [ ] 2 fios para alimentação.
-- [ ] Fios para conexões entre os Arduino e os módulos CAN.
+1 Computador com linux, Arduino IDE, python, pySerial, demais bibliotecas.
+2 Arduino Nano.
+2 Módulo CAN BUS (MCP2515 + TJA1050).
+1 par trançado para dados (CAN High).
+2 fios para alimentação.
+Fios para conexões entre os Arduino e os módulos CAN.
 
 ### Software
 #### Instalação da da biblioteca MCP2515:
@@ -51,8 +51,6 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 
 4. Repita os procedimentos *2.1, 2.2 e 2.3* porém agora com o exemplo CANSensor, disponível em *Arquivo/Exemplos/MCP2515-master/CANSensor*, e gravando na outra placa Arduino Nano.
 
-5. (Opicional) Para alterar a informação enviada pelo nodo CAN Sensor, deve-se atribuir o valor desejado a variavel leitura, alterando a linha `leitura.inte = analogRead(A0)` na `void lopp(){...}`. Os tipos de variaveis pré-configurados para envio são: long int (`leitura.inte`); unsigned long int (`leitura.uinte`); float (`leitura.flt`) ;  int64_t (`leitura.int64`); uint64_t (`leitura.uint64`); int32_t (`leitura.int32`); uint32_t (`leitura.uint32`); int16_t (`leitura.int16`); uint16_t (`leitura.uint16`). Você pode optar por enviar uma lista de bytes, com até 8 bytes, para isso forneça o tamanho da lista em bytes no terceiro paramentro e o nome da lista no quarto paramentro da função `putinBuff(ID_padrao, ID_extecao, num_bytes, data_to_send)`.
-
 > Ob. 2: Ao substituir a placa Arduino Nano por outro módelo pode ser necessário alterar o pino digital ultilizado na interrupção, que é declarada na ultima linha da `void setup(){...}`. Em [arduino.cc/reference/](https://www.arduino.cc/reference/pt/language/functions/external-interrupts/attachinterrupt/) pode-se verificar os pinos de entrada de interrupções para os variados tipos de placas Arduino.
 
 ### Conexões
@@ -65,4 +63,15 @@ Para coletar as informações da rede deve-se conectar o nodo CAN Mon a um compu
 
 ## Configuração B - layout autonomo mínimo.
 
-O processo de programação dos nodos é muito semelhante a feita na configuração A, porém lo lugar de usar o exemplo CANMon.ino, será usado o CANSave.ino. Para o CANSensor nada muda
+O processo de programação dos nodos é muito semelhante a feita na configuração A, porém lo lugar de usar o exemplo CANMon.ino, será usado o CANSave.ino. Para o CANSensor nada muda.
+
+### Conexões
+![CANSave_CANSensor](save_sensor_cx.jpg)
+
+## Dicas para os proximos passos.
+
+1. Para alterar a informação enviada pelo nodo CAN Sensor, deve-se atribuir o valor desejado a variavel leitura, alterando a linha `leitura.inte = analogRead(A0)` na `void lopp(){...}`. Os tipos de variaveis pré-configurados para envio são: long int (`leitura.inte`); unsigned long int (`leitura.uinte`); float (`leitura.flt`) ;  int64_t (`leitura.int64`); uint64_t (`leitura.uint64`); int32_t (`leitura.int32`); uint32_t (`leitura.uint32`); int16_t (`leitura.int16`); uint16_t (`leitura.uint16`). Você pode optar por enviar uma lista de bytes, com até 8 bytes, para isso forneça o tamanho da lista em bytes no terceiro paramentro e o nome da lista no quarto paramentro da função `putinBuff(ID_padrao, ID_extecao, num_bytes, data_to_send)`.
+
+2. Para adicionar mais nodos do tipo CAN Sensor deve-se programa-los e conecta-los ao barramento, não se esqueça que a terminação só deve ser usado nos nodos extremos. O número maximo (teorico e não testado) de nodos é 110, limite fornecido pelo TJA1050.
+
+3. Para demais alterações veja a documentação, MiniCAN - FURG (adicionar o link!).
