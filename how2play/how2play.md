@@ -56,7 +56,7 @@ O layout mínimo é composto de um nodo sensor (CAN Sensor), de um nodo monitor 
 > Ob. 2: Ao substituir a placa Arduino Nano por outro módelo pode ser necessário alterar o pino digital ultilizado na interrupção, que é declarada na ultima linha da `void setup(){...}`. Em [arduino.cc/reference/](https://www.arduino.cc/reference/pt/language/functions/external-interrupts/attachinterrupt/) pode-se verificar os pinos de entrada de interrupções para os variados tipos de placas Arduino.
 
 ### Conexões
-![CANMon_CANSensor](/mon_sensor_cx.jpg)
+![CANMon_CANSensor](mon_sensor_cx.jpg)
 > Ob. 3: Repare que o jumper do terminador está fechado em ambos os nodos. Se forem adicioandos outros nodos sensores no barramento os teminadores devem ser ligados apenas no dois nodos extremos do barramento.
 
 ### Coletando as informações no computador.
